@@ -11,21 +11,19 @@ if scriptType == 1:
         deck = [6, 7, 8, 9, 10, 2, 3, 4, 11] * 4
         currentBalance = 0
         while True:
-            choice = input("Будете брать карту? ")
-            if choice == "y" or choice == "д":
+            if input("будете брать карту? ") == "д":
                 random.shuffle(deck)
                 currentCard = deck.pop()
                 currentBalance += currentCard
-                print('вам выпала карта достоинством %d' %currentCard)
+                print('вам выпало %d' %currentCard)
                 print('вы набрали %d' %currentBalance)
                 if currentBalance == 21:
-                    print('Win!!!')
+                    print('вы победили :)')
                     break
                 elif currentBalance > 21:
-                    print('Fail!')
+                    print('вы проиграли :(')
                     break
             else:
                 break
 
-        answer_repeat = input("ещё раз?")
-        again = answer_repeat == 'y' or answer_repeat == 'д'
+        again = input("ещё раз?") == 'д'
